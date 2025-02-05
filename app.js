@@ -32,11 +32,16 @@ function userIntent() {
 
     count--;
     updateGameStatus(userNumber);
+    clearInput();
 
     if (count === 0) {
         loseGame();
         enableNewGameButton();
     }
+}
+
+function clearInput() {
+    document.getElementById("userNumber").value = "";
 }
 
 function isValidNumber(number, min, max) {
