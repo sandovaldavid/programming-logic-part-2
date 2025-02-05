@@ -54,12 +54,19 @@ function enableNewGameButton() {
     newGameButton.disabled = false;
 }
 
+function disableAttempt() {
+    const attemptButton = document.getElementById("intentar");
+    attemptButton.disabled = true;
+}
+
 function loseGame() {
+
     assignTextElement(
         "¡Perdiste! El número secreto era: " + secretNumber,
         "h1"
     );
     assignTextElement("¡Superaste el número maximo de intentos!", "p");
+    disableAttempt();
 }
 
 function winGame(count) {
