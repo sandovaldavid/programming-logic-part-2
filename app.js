@@ -63,9 +63,19 @@ function enableNewGameButton() {
     newGameButton.disabled = false;
 }
 
+function disableNewGameButton() {
+    const newGameButton = document.getElementById("reiniciar");
+    newGameButton.disabled = true;
+}
+
 function disableAttempt() {
     const attemptButton = document.getElementById("intentar");
     attemptButton.disabled = true;
+}
+
+function enableAttempt() {
+    const attemptButton = document.getElementById("intentar");
+    attemptButton.disabled = false;
 }
 
 function loseGame() {
@@ -88,4 +98,14 @@ function winGame(count) {
 
 function generateRandomNumber() {
     return Math.floor(Math.random() * endNumber) + 1;
+}
+
+function newGame() {
+    secretNumber = generateRandomNumber();
+    count = intentNumber;
+    initialMessages();
+    assignTextElement("", "span");
+    clearInput();
+    disableNewGameButton();
+    enableAttempt();
 }
