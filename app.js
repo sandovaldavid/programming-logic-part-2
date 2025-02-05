@@ -9,8 +9,12 @@ function assignTextElement(title, label) {
     elementHTML.innerHTML = title;
 }
 
-assignTextElement("Juego del Número Secreto !", "h1");
-assignTextElement("Adivina el número secreto entre 1 y 10", "P");
+function initialMessages(){
+    assignTextElement("Juego del Número Secreto !", "h1");
+    assignTextElement("Adivina el número secreto entre 1 y 10", "P");
+}
+
+initialMessages();
 
 function userIntent() {
     const userNumber = parseInt(document.getElementById("userNumber").value);
