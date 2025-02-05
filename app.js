@@ -1,5 +1,11 @@
-let title = document.querySelector('h1');
-title.innerHTML = "Juego del Número Secreto !";
+function assignTextElement(title, label) {
+    let elementHTML = document.querySelector(label);
+    elementHTML.innerHTML = title;
+}
 
-let phrase = document.querySelector('p');
-phrase.innerHTML = "Adivina el número secreto entre 1 y 10";
+assignTextElement("Juego del Número Secreto !", "h1");
+assignTextElement("Adivina el número secreto entre 1 y 10", "P");
+
+function userIntent() {
+    alert("Has hecho click en el botón");
+}
