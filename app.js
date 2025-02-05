@@ -60,7 +60,6 @@ function disableAttempt() {
 }
 
 function loseGame() {
-
     assignTextElement(
         "¡Perdiste! El número secreto era: " + secretNumber,
         "h1"
