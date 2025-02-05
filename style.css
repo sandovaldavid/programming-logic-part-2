@@ -105,6 +105,11 @@ button {
     font-family: 'Inter', sans-serif;
 }
 
+span {
+    font-weight: 700;
+    color: hsla(0, 100%, 50%, 0.6);
+}
+
 .texto__parrafo {
     font-size: 32px;
     font-weight: 400;
