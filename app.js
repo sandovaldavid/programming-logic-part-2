@@ -1,3 +1,6 @@
+let endNumber = 10;
+let secretNumber = generateRandomNumber();
+
 function assignTextElement(title, label) {
     let elementHTML = document.querySelector(label);
     elementHTML.innerHTML = title;
@@ -8,4 +11,8 @@ assignTextElement("Adivina el número secreto entre 1 y 10", "P");
 
 function userIntent() {
     alert("Has hecho click en el botón");
+}
+
+function generateRandomNumber() {
+    return Math.floor(Math.random() * endNumber) + 1;
 }
