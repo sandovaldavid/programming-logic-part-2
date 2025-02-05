@@ -88,6 +88,7 @@ function loseGame() {
 }
 
 function winGame(count) {
+    disableAttempt();
     assignTextElement("¡Ganaste! El número secreto era: " + secretNumber, "h1");
     assignTextElement("¡Felicidades!", "p");
     assignTextElement(
