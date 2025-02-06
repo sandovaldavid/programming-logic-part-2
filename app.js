@@ -108,23 +108,29 @@ function checkNumber(number) {
 }
 
 function newRandomNumber() {
-	let randomNumber = generateRandomNumber();
-
-	if (!(listRandomNumber.length === endNumber)) {
-		if (checkNumber(randomNumber)) {
-			return newRandomNumber();
-		} else {
-			listRandomNumber.push(randomNumber);
-			return randomNumber;
-		}
-	} else {
+	if (listRandomNumber.length === endNumber) {
 		assignTextElement('Ya se sortearon todos los números posibles', 'p');
 		disableNewGameButton();
+		disableAttempt();
+		return null;
 	}
+
+	let randomNumber = generateRandomNumber();
+	while (checkNumber(randomNumber)) {
+		randomNumber = generateRandomNumber();
+	}
+
+	listRandomNumber.push(randomNumber);
+	return randomNumber;
 }
 
 function newGame() {
-	secretNumber = newRandomNumber();
+	const newNumber = newRandomNumber();
+	if (newNumber === null) {
+		return;
+	}
+
+	secretNumber = newNumber;
 	count = intentNumber;
 	initialMessages();
 	assignTextElement('', 'span');
