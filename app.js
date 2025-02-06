@@ -30,7 +30,7 @@ function userIntent() {
 		return;
 	}
 
-    if (userNumber === secretNumber) {
+	if (userNumber === secretNumber) {
 		winGame(count);
 		enableNewGameButton();
 		return;
@@ -110,16 +110,17 @@ function checkNumber(number) {
 function newRandomNumber() {
 	let randomNumber = generateRandomNumber();
 
-	if (listRandomNumber.length === endNumber) {
-		listRandomNumber = [];
-	}
-
-	if (checkNumber(randomNumber)) {
-		return newRandomNumber();
-	} else {
-		listRandomNumber.push(randomNumber);
-		return randomNumber;
-	}
+	if (!(listRandomNumber.length === endNumber)) {
+        if (checkNumber(randomNumber)) {
+            return newRandomNumber();
+        } else {
+            listRandomNumber.push(randomNumber);
+            return randomNumber;
+        }
+	}else{
+        assignTextElement("Ya se sortearon todos los números posibles", "p");
+        disableNewGameButton();
+    }
 }
 
 function newGame() {
