@@ -110,5 +110,3 @@ function newGame() {
     disableNewGameButton();
     enableAttempt();
 }
-
-// testing fit modules
