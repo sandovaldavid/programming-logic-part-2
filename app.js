@@ -12,14 +12,14 @@ function assignTextElement(title, label) {
 }
 
 function initialMessages() {
-	assignTextElement("Juego del Número Secreto !", "h1");
-	assignTextElement("Adivina el número secreto entre 1 y 10", "P");
+	assignTextElement('Juego del Número Secreto !', 'h1');
+	assignTextElement('Adivina el número secreto entre 1 y 10', 'P');
 }
 
 initialMessages();
 
 function userIntent() {
-	const userNumber = parseInt(document.getElementById("userNumber").value);
+	const userNumber = parseInt(document.getElementById('userNumber').value);
 	const MIN_NUMBER = startNumber;
 	const MAX_NUMBER = endNumber;
 
@@ -47,7 +47,7 @@ function userIntent() {
 }
 
 function clearInput() {
-	document.getElementById("userNumber").value = "";
+	document.getElementById('userNumber').value = '';
 }
 
 function isValidNumber(number, min, max) {
@@ -55,47 +55,47 @@ function isValidNumber(number, min, max) {
 }
 
 function updateGameStatus(userNumber) {
-	const hint = userNumber < secretNumber ? "mayor" : "menor";
-	assignTextElement(`El número secreto es ${hint}`, "p");
-	assignTextElement(`Te quedan ${count} intentos`, "span");
+	const hint = userNumber < secretNumber ? 'mayor' : 'menor';
+	assignTextElement(`El número secreto es ${hint}`, 'p');
+	assignTextElement(`Te quedan ${count} intentos`, 'span');
 }
 
 function enableNewGameButton() {
-	const newGameButton = document.getElementById("reiniciar");
+	const newGameButton = document.getElementById('reiniciar');
 	newGameButton.disabled = false;
 }
 
 function disableNewGameButton() {
-	const newGameButton = document.getElementById("reiniciar");
+	const newGameButton = document.getElementById('reiniciar');
 	newGameButton.disabled = true;
 }
 
 function disableAttempt() {
-	const attemptButton = document.getElementById("intentar");
+	const attemptButton = document.getElementById('intentar');
 	attemptButton.disabled = true;
 }
 
 function enableAttempt() {
-	const attemptButton = document.getElementById("intentar");
+	const attemptButton = document.getElementById('intentar');
 	attemptButton.disabled = false;
 }
 
 function loseGame() {
 	assignTextElement(
-		"¡Perdiste! El número secreto era: " + secretNumber,
-		"h1"
+		'¡Perdiste! El número secreto era: ' + secretNumber,
+		'h1'
 	);
-	assignTextElement("¡Superaste el número maximo de intentos!", "p");
+	assignTextElement('¡Superaste el número maximo de intentos!', 'p');
 	disableAttempt();
 }
 
 function winGame(count) {
 	disableAttempt();
-	assignTextElement("¡Ganaste! El número secreto era: " + secretNumber, "h1");
-	assignTextElement("¡Felicidades!", "p");
+	assignTextElement('¡Ganaste! El número secreto era: ' + secretNumber, 'h1');
+	assignTextElement('¡Felicidades!', 'p');
 	assignTextElement(
-		"¡Adivinaste	el número en " + (intentNumber - count) + " intentos!",
-		"span"
+		'¡Adivinaste	el número en ' + (intentNumber - count) + ' intentos!',
+		'span'
 	);
 }
 
@@ -111,23 +111,23 @@ function newRandomNumber() {
 	let randomNumber = generateRandomNumber();
 
 	if (!(listRandomNumber.length === endNumber)) {
-        if (checkNumber(randomNumber)) {
-            return newRandomNumber();
-        } else {
-            listRandomNumber.push(randomNumber);
-            return randomNumber;
-        }
-	}else{
-        assignTextElement("Ya se sortearon todos los números posibles", "p");
-        disableNewGameButton();
-    }
+		if (checkNumber(randomNumber)) {
+			return newRandomNumber();
+		} else {
+			listRandomNumber.push(randomNumber);
+			return randomNumber;
+		}
+	} else {
+		assignTextElement('Ya se sortearon todos los números posibles', 'p');
+		disableNewGameButton();
+	}
 }
 
 function newGame() {
 	secretNumber = newRandomNumber();
 	count = intentNumber;
 	initialMessages();
-	assignTextElement("", "span");
+	assignTextElement('', 'span');
 	clearInput();
 	disableNewGameButton();
 	enableAttempt();
