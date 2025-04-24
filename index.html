@@ -1,20 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Meta básica -->
+		<title>Juego del Número Secreto | Adivina el número entre 1 y 10</title>
+		<meta
+			name="description"
+			content="Un juego divertido donde tienes que adivinar un número secreto entre 1 y 10. Pon a prueba tu intuición y lógica." />
+		<meta name="author" content="David Sandoval" />
+		<meta name="publisher" content="https://numero-secreto.devsandoval.me/" />
+
+		<!-- Canonical -->
+		<link rel="canonical" href="https://numero-secreto.devsandoval.me/" />
+
+		<!-- Open Graph (Facebook, Instagram, WhatsApp, LinkedIn) -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Juego del Número Secreto | Pon a prueba tu intuición" />
+		<meta
+			property="og:description"
+			content="Un juego divertido donde tendrás que adivinar un número secreto entre 1 y 10. ¿Podrás descubrirlo?" />
+		<meta property="og:url" content="https://numero-secreto.devsandoval.me/" />
+		<meta
+			property="og:image"
+			content="https://numero-secreto.devsandoval.me/img/og/og-numero-secreto.png" />
+		<meta property="og:site_name" content="Juego del Número Secreto" />
+		<meta property="og:locale" content="es_ES" />
+
+		<!-- Twitter Cards (funciona también para X y Telegram) -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Juego del Número Secreto | Pon a prueba tu intuición" />
+		<meta
+			name="twitter:description"
+			content="Un juego divertido donde tendrás que adivinar un número secreto entre 1 y 10. ¿Podrás descubrirlo?" />
+		<meta
+			name="twitter:image"
+			content="https://numero-secreto.devsandoval.me/img/og/og-numero-secreto.png" />
+		<meta name="twitter:site" content="@dev_sandoval" />
+		<meta name="twitter:creator" content="@dev_sandoval" />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
 			rel="stylesheet" />
 		<link rel="stylesheet" href="style.css" />
-		<title>JS Game</title>
+
+		<!-- Favicon -->
+		<link rel="icon" href="./img/favicon.ico" sizes="any" />
+		<link rel="icon" href="./img/icons/favicon-32x32.png" sizes="32x32" type="image/png" />
+		<link rel="icon" href="./img/icons/favicon-16x16.png" sizes="16x16" type="image/png" />
+		<link rel="apple-touch-icon" href="./img/icons/apple-touch-icon.png" />
+
+		<!-- Theme and color scheme -->
 		<meta name="theme-color" content="#1a2a6c" />
+		<meta name="color-scheme" content="dark light" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta
-			name="apple-mobile-web-app-status-bar-style"
-			content="black-translucent" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<!-- Web App Manifest -->
+		<link rel="manifest" href="./manifest.json" />
 	</head>
 
 	<body>
@@ -33,10 +79,7 @@
 						class="container__input"
 						id="userNumber" />
 					<div class="chute container__botones">
-						<button
-							class="container__boton"
-							onclick="userIntent()"
-							id="intentar">
+						<button class="container__boton" onclick="userIntent()" id="intentar">
 							Intentar
 						</button>
 						<button
