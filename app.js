@@ -24,9 +24,7 @@ function userIntent() {
 	const MAX_NUMBER = endNumber;
 
 	if (!isValidNumber(userNumber, MIN_NUMBER, MAX_NUMBER)) {
-		alert(
-			`Por favor, ingrese un número entre ${MIN_NUMBER} y ${MAX_NUMBER}`
-		);
+		alert(`Por favor, ingrese un número entre ${MIN_NUMBER} y ${MAX_NUMBER}`);
 		return;
 	}
 
@@ -81,10 +79,7 @@ function enableAttempt() {
 }
 
 function loseGame() {
-	assignTextElement(
-		'¡Perdiste! El número secreto era: ' + secretNumber,
-		'h1'
-	);
+	assignTextElement('¡Perdiste! El número secreto era: ' + secretNumber, 'h1');
 	assignTextElement('¡Superaste el número maximo de intentos!', 'p');
 	disableAttempt();
 }
@@ -93,10 +88,7 @@ function winGame(count) {
 	disableAttempt();
 	assignTextElement('¡Ganaste! El número secreto era: ' + secretNumber, 'h1');
 	assignTextElement('¡Felicidades!', 'p');
-	assignTextElement(
-		'¡Adivinaste	el número en ' + (intentNumber - count) + ' intentos!',
-		'span'
-	);
+	assignTextElement('¡Adivinaste	el número en ' + (intentNumber - count) + ' intentos!', 'span');
 }
 
 function generateRandomNumber() {
